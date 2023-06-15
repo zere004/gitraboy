@@ -1,0 +1,627 @@
+<!DOCTYPE html><html lang="ru"><head>
+    <meta charset="utf-8">
+    <meta property="og:image" content="images/job.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script async src="js/tag.js"></script><script src="js/axios.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/wnumb.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/vue.2.6.js"></script>
+        <script src="https://my.saleads.pro/api/scid.js?auth=uPpwWHxWWE5iZoZwGjewVgVgO6rqg7rONPA2iVA10xFX2ufnlf"></script>
+                <title>Работа для тебя - onetop.su</title>
+        <meta name="description" content="Для Вас VIP предложение на вакансиям">
+    </head>
+<body>
+<div class="wrapper" id="app">
+
+    <header class="header">
+        <div class="container">
+            <div class="open-nav">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <a href="#" class="logo">
+                <b>HR</b>Jobs
+            </a>
+            <nav class="wrap-nav">
+                <div class="close-nav">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="menu">
+                    <li class="menu-item"><a href="#advantages" class="anchor-link">Преимущества</a>
+                    </li>
+                    <li class="menu-item"><a href="#vacancy" class="anchor-link">Вакансии</a></li>
+                    <li class="menu-item"><a href="#about" class="anchor-link">О нас</a></li>
+                    <li class="menu-item"><a href="register.html">Регирация</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+           <div class="overlay"></div> 
+        </div>
+    </header>
+    <main>
+
+        <div class="container">
+
+            <div class="section homescreen">
+                <div class="homescreen__wrapper">
+                    <div class="homescreen__text">
+                        <div class="h1">
+                            Работа - рядом
+                            с тобой
+                        </div>
+                        <p>
+                            Быстрый поиск работы
+                        </p>
+                        <a href="#vacancy" class="btn btn-primary anchor-link">
+                            Смотреть вакансии
+                        </a>
+                    </div>
+                    <div class="homescreen__img">
+                        <div class="homescreen__icon homescreen__icon-1">
+                            <img src="fonts/icon-1.svg" alt>
+                        </div>
+                        <div class="homescreen__icon homescreen__icon-2">
+                            <img src="fonts/icon-2.svg" alt>
+                        </div>
+                        <div class="homescreen__icon homescreen__icon-3">
+                            <img src="fonts/icon-3.svg" alt>
+                        </div>
+                        <div class="homescreen__img-wrap">
+                            <img src="images/pic.jpg" alt>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section advantages" id="advantages">
+                <div class="advantages__wrapper">
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="fonts/1.svg" alt>
+                        </div>
+                        <div class="advantages__text">
+                            <div class="h4">
+                                Карьерный рост
+                            </div>
+                            <p>
+                                Не останавливайся на достигнутом всегда стремись к большему
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="fonts/2.svg" alt>
+                        </div>
+                        <div class="advantages__text">
+                            <div class="h4">
+                                Высокая заработная плата
+                            </div>
+                            <p>
+                                Уникальные предложения с высокой оплатой труда
+                            </p>
+                        </div>
+                    </div>
+                    <div class="advantages__item">
+                        <div class="advantages__icon">
+                            <img src="fonts/3.svg" alt>
+                        </div>
+                        <div class="advantages__text">
+                            <div class="h4">
+                                Удобный график
+                            </div>
+                            <p>
+                                Работай когда удобно и там где хочешь. Большой выбор вакансий с гибким графиком 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section proposition">
+                <div class="proposition__text">
+                    <div class="h2">
+                        Работа
+                    </div>
+                    <p>
+                        в популярных компаниях
+                    </p>
+                </div>
+                <div class="proposition__gallery">
+                    <div class="swiper proposition__slider">
+                        <div class="swiper-wrapper">
+                            <top-item-template :item="item" :counters="counters" v-for="(item, index) in elements" v-if="index < 6"></top-item-template>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next slider-btn slider-btn-next proposition__next"></div>
+                    <div class="swiper-button-prev slider-btn slider-btn-prev proposition__prev"></div>
+                </div>
+
+            </div>
+
+            <div class=" vacancy" id="vacancy">
+                <div class="section vacancy__head">
+                    <div class="h2">
+                        Вакансии
+                    </div>
+                    <p>
+                        Выберите вакансию, которая подходит именно тебе
+                    </p>
+                </div>
+                <div class="vacancy__items">
+                    <item-template :item="item" :counters="counters" v-for="(item, index) in elements"></item-template>
+                </div>
+            </div>
+
+            <div class="section subscreen">
+                            <div class="subscreen__img">
+                    <img src="images/pic.png" alt>
+                </div>
+                <div class="subscreen__text">
+                    <div class="subscreen__title">
+                        Начинай
+                        сейчас
+                    </div>
+                    <div class="subscreen__info">
+                        <p>
+                            Лучшие вакансии для тебя только сегодня
+                        </p>
+                        <a href="#vacancy" class="anchor-link">
+                            Выбрать
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section about" id="about">
+                <div class="about__img">
+                    <img src="images/pic_1.jpg" alt>
+                </div>
+                <div class="about__text">
+                    <div class="logo">
+                        <b>HR</b>Jobs
+                    </div>
+                    <div class="h6">
+                        Твоя работа уже рядом
+                    </div>
+                    <p>
+                        На данном сайте представлены самые и актуальные вакансии. Благодаря нашему сервису вы найдёте работу мечты без особого труда. Работайте когда хотите, где вам удобно и сколько пожелаете. Удобный поиск, лучшие работодатели, работа которая подойдет именно вам.
+
+                                                </p><p>телеграм:</p>                                                     
+                    <p><a href="https://t.me/vakentkz">Telegram: https://t.me/vakentkz</a></p>
+                    <p>Whatsap:</p> 
+                    <p></p><p><a href="https://wa.me/+77475860838">https://wa.me/+77475860838</a></p>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="section props">
+                <div class="props__text">
+                    <div class="h2">
+                        Успей выбрать
+                    </div>
+                    <p>
+                        Мы показываем только лучшие компании
+                    </p>
+                    <div class="props__info">
+                        Мы помогли найти работу:
+                        <span>
+                    2 950
+                </span>
+                    </div>
+                </div>
+                <div class="props__gallery">
+                    <div class="swiper props__slider">
+                        <div class="swiper-wrapper">
+                            <bottom-item-template :item="item" :counters="counters" v-for="(item, index) in elements" v-if="index < 6"></bottom-item-template>
+
+                        </div>
+                    </div>
+                    <div class="swiper-button-next slider-btn slider-btn-next props__next"></div>
+                    <div class="swiper-button-prev slider-btn slider-btn-prev props__prev"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="logo">
+                <b>HR</b>Jobs
+            </a>
+            <div class="footer__brand">
+                            <small> это бесплатный информационный сервис, предоставляющий контент и
+                            справочную информаци о работе. Все товарные знаки и логотипы, представленные на этом сайте, являются собственностью соответствующих владельцев и взяты из публичных источников. onetop.su не является работодателем и не предоставляет работу. Не несет ответственности за точность информации, по тарифам, условиям, а также за любую другую информацию.    </small>
+                                
+            </div>
+            <nav class="wrap-nav">
+                <ul class="menu">
+                    <li class="menu-item"><a href="#advantages" class="anchor-link">
+                        Преимущества
+                    </a></li>
+                    <li class="menu-item"><a href="#vacancy" class="anchor-link">
+                        Вакансии
+                    </a></li>
+                    
+                    <li class="menu-item"><a href="#about" class="anchor-link">
+                        О_нас
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</div>
+
+     
+
+<script type="text/x-template" id="top-item-template">
+
+<div class="swiper-slide">
+    <div class="proposition__item">
+        <div class="proposition__img">
+            <img :src="logo(item.logo)" alt="">
+        </div>
+        <div class="proposition__note">
+            Присоединились к нам
+            <b>
+                {{ item.votes }} сотрудников
+            </b>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/x-template" id="bottom-item-template">
+<div class="swiper-slide">
+    <div class="props__item">
+        <div class="props__recommendation">
+            <img src="/designs/53/img/icons/like.svg" alt="">
+            Рекомендуют {{ item.apply }}%
+        </div>
+        <div class="props__img">
+            <img :src="logo(item.logo)" alt="">
+        </div>
+        <div class="props__note">
+            Доход
+            <b>
+                до {{ item.sum }} р.
+            </b>
+        </div>
+        <a target="_blank" :href="link(item.link)" @click="ymGoal(item.link)" class="btn btn-primary">
+            Выбрать
+        </a>
+    </div>
+</div>
+</script>
+
+<script type="text/x-template" id="item-template">
+<div class="section vacancy__item">
+    <div class="vacancy__heading">
+        <div class="vacancy__img">
+            <img :src="logo(item.logo)" alt="">
+        </div>
+        <div class="vacancy__title">
+            <div class="h3">
+                Работа в {{ item.companyName }}
+            </div>
+            <p>
+                Доход <span>до {{ item.sum }} р.</span>
+            </p>
+        </div>
+    </div>
+    <div class="vacancy__body">
+        <div class="vacancy__infos">
+            <div class="vacancy__info">
+                <p>
+                    Возраст
+                </p>
+                <span>
+                    {{ item.ageFrom }}
+                    <template v-if="item.ageTo"> {{ item.ageTo }}</template>
+                    <template v-else> +</template>
+                </span>
+            </div>
+            <div class="vacancy__info">
+                <p>
+                    Режим работы
+                </p>
+                <span>{{ item.text2 }}</span>
+            </div>
+            <div class="vacancy__info">
+                <p>
+                    Город/Регион
+                </p>
+                <span>{{ item.text3 }}</span>
+            </div>
+        </div>
+        <div class="vacancy__text">
+            <p v-text="item.text1"></p>
+            <a target="_blank" :href="link(item.link)" @click="ymGoal(item.link)" class="btn btn-primary">
+                Выбрать
+            </a>
+        </div>
+    </div>
+</div>
+</script>
+
+<script>
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+    };
+    Vue.component('item-template', {
+        template: '#item-template',
+        props: ['item', 'counters'],
+        methods: {
+            mark: function() {
+                return window.location.pathname != '/' ?
+                    (window.location.pathname.match(/^\/[0-9a-zA-Z]+$/) ?
+                        '?mark=' + window.location.pathname.replace(/[^0-9a-zA-Z]+/, '') :
+                        '') :
+                    '';
+
+            },
+            ymGoal(name){
+                if (this.counters.length){
+                    for(var i = 0; i < this.counters.length; i++){
+                        let counterId = this.counters[i];
+                        ym(counterId,'reachGoal', name);
+                    }
+                }
+            },
+            link: function(val) {
+                return 'https://my.saleads.pro/s/' + val + window.location.search;
+            },
+            logo: function(val) {
+                return '/img/logos/225x92/' + val + '.png';
+            }
+        }
+    });
+    Vue.component('bottom-item-template', {
+        template: '#bottom-item-template',
+        props: ['item', 'counters'],
+        methods: {
+            mark: function() {
+                return window.location.pathname != '/' ?
+                    (window.location.pathname.match(/^\/[0-9a-zA-Z]+$/) ?
+                        '?mark=' + window.location.pathname.replace(/[^0-9a-zA-Z]+/, '') :
+                        '') :
+                    '';
+
+            },
+            ymGoal(name){
+                if (this.counters.length){
+                    for(var i = 0; i < this.counters.length; i++){
+                        let counterId = this.counters[i];
+                        ym(counterId,'reachGoal', name);
+                    }
+                }
+            },
+            link: function(val) {
+                return 'https://my.saleads.pro/s/' + val + window.location.search;
+            },
+            logo: function(val) {
+                return '/img/logos/225x92/' + val + '.png';
+            }
+        }
+    });
+    Vue.component('top-item-template', {
+        template: '#top-item-template',
+        props: ['item', 'counters'],
+        methods: {
+            mark: function() {
+                return window.location.pathname != '/' ?
+                    (window.location.pathname.match(/^\/[0-9a-zA-Z]+$/) ?
+                        '?mark=' + window.location.pathname.replace(/[^0-9a-zA-Z]+/, '') :
+                        '') :
+                    '';
+
+            },
+            ymGoal(name){
+                if (this.counters.length){
+                    for(var i = 0; i < this.counters.length; i++){
+                        let counterId = this.counters[i];
+                        ym(counterId,'reachGoal', name);
+                    }
+                }
+            },
+            link: function(val) {
+                return 'https://my.saleads.pro/s/' + val + window.location.search;
+            },
+            logo: function(val) {
+                return '/img/logos/225x92/' + val + '.png';
+            }
+        }
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            type: 'hr',
+            elements: [],
+            counter: 100,
+            counters: ["57237952"],
+            markNaked: window.location.pathname != '/' ?
+                (window.location.pathname.match(/^\/[0-9a-zA-Z]+$/) ?
+                    window.location.pathname.replace(/[^0-9a-zA-Z]+/, '') :
+                    '') : '',
+        },
+        methods: {
+            ymGoal(name){
+                if (this.counters.length){
+                    for(var i = 0; i < this.counters.length; i++){
+                        let counterId = this.counters[i];
+                        ym(counterId,'reachGoal', name);
+                    }
+                }
+            },
+
+            link: function(val) {
+                return 'https://my.saleads.pro/s/' + val + window.location.search;
+            },
+            mark: function() {
+                return window.location.pathname != '/' ?
+                    (window.location.pathname.match(/^\/[0-9a-zA-Z]+$/) ?
+                        '?mark=' + window.location.pathname.replace(/[^0-9a-zA-Z]+/, '') :
+                        '') :
+                    '';
+
+            },
+            logo: function(val) {
+                return '/img/logos/225x92/' + val + '.png';
+            },
+            afterLoad: function(){
+                // mob nav
+                $('.open-nav').click(function () {
+                    $('.wrap-nav').addClass('open');
+                    $('.overlay').addClass('open');
+                });
+                $('.close-nav, .overlay').click(function () {
+                    $('.wrap-nav').removeClass('open');
+                    $('.overlay').removeClass('open');
+                });
+
+                // fancybox
+                $('[data-src]').fancybox({
+                    autoFocus: false
+                });
+
+
+                //sliders
+                const propositionSlider = new Swiper(".proposition__slider", {
+                    slidesPerView: 1.2,
+                    spaceBetween: 14,
+                    watchSlidesProgress: true,
+                    breakpoints: {
+                        280: {
+                            slidesPerView: 1.3,
+                        },
+                        424: {
+                            slidesPerView: 1.5,
+                        },
+                        567: {
+                            slidesPerView: 2.5,
+                        },
+                        769: {
+                            slidesPerView: 2,
+                        },
+                        992: {
+                            slidesPerView: 3,
+                        },
+                    },
+                    navigation: {
+                        nextEl: ".proposition__next",
+                        prevEl: ".proposition__prev",
+                    },
+                });
+
+
+                const propsSlider = new Swiper(".props__slider", {
+                    slidesPerView: 1.2,
+                    spaceBetween: 24,
+                    watchSlidesProgress: true,
+                    breakpoints: {
+                        280: {
+                            spaceBetween: 10,
+                            slidesPerView: 1.2,
+                        },
+                        424: {
+                            slidesPerView: 1.5,
+                        },
+                        567: {
+                            slidesPerView: 2.2,
+                            spaceBetween: 10,
+
+                        },
+                        769: {
+                            slidesPerView: 2,
+                        },
+                        992: {
+                            slidesPerView: 2.65,
+                            spaceBetween: 24,
+                        },
+                    },
+                    navigation: {
+                        nextEl: ".props__next",
+                        prevEl: ".props__prev",
+                    },
+                });
+                //sliders end
+
+                //anchors
+                $(document).ready(function(){
+                    $(".wrapper").on("click",".anchor-link", function (event) {
+                        event.preventDefault();
+                        let id  = $(this).attr('href'),
+                            top = $(id).offset().top;
+                        $('body,html').animate({scrollTop: top}, 1000);
+                    });
+                });
+
+
+                ScrollReveal().reveal('.header, .footer', {
+
+                });
+
+                ScrollReveal().reveal('.section', {
+                    distance: '50px',
+                    delay: 200,
+                });
+            },
+        },
+        mounted: function() {
+                        if(typeof sclid != "undefined"){
+                let markNaked = '73cy';
+                let url = 'https://onetop.su/%/offers'.split(':')[1].replace('%', markNaked);
+                console.log([url, markNaked]);
+                let params = {clid: sclid};
+                axios.get(url, {params: params}).then( (response) => {
+                    this.elements = response.data;
+                                            ym(57237952, "params", {
+                            design: "53",
+                            companies: this.elements.map( item => item.companyName ),
+                            numOffers: this.elements.length,
+                            mark: markNaked,
+                            offerPositions: this.elements.map( (item, index) => {
+                                let off = {} 
+                                off[item.companyName] = index+1;
+                                return off; 
+                            }),
+                        })
+                                       this.afterLoad();
+                });
+            }
+                    }
+    })
+
+</script>
+
+   <script type="text/javascript">
+	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+	                                    ym(57237952, "init", {
+                    clickmap:true,
+                    trackLinks:true,
+                    webvisor:true
+                });
+                    	</script>
+<noscript>
+    <div>
+                <img src="https://mc.yandex.ru/watch/57237952" style="position:absolute; left:-9999px;" alt>
+            </div>
+</noscript>
+</body></html>

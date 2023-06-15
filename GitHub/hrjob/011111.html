@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вакансии</title>
+    <link rel="stylesheet" href="cssvacant.css">
+   
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function addVacancy() {
+            var title = document.getElementById('title').value;
+            var description = document.getElementById('description').value;
+            var imageInput = document.getElementById('image');
+            var contact = document.getElementById('contact').value;
+            
+            var imageFile = imageInput.files[0]; // Получаем выбранный файл
+            
+            var formData = new FormData(); // Создаем объект FormData для отправки данных
+            
+            formData.append('title', title);
+            formData.append('description', description);
+            formData.append('image', imageFile);
+            formData.append('contact', contact);
+            
+            // Отправка данных на сервер для сохранения
+            axios.post('saveVacancy.php', formData)
+                .then(function (response) {
+                    // Обработка успешного ответа
+                    var vacancyContainer = document.createElement('div');
+                    vacancyContainer.className = 'vacancy';
+                    
+                    var titleHeading = document.createElement('h2');
+                    titleHeading.textContent = response.data.title;
+                    
+                    var descriptionPara = document.createElement('p');
+                    descriptionPara.textContent = 'Описание: ' + response.data.description;
+                    
+                    var imageElement = document.createElement('img');
+                    imageElement.src = response.data.image;
+                    imageElement.alt = 'Изображение';
+                    
+                    var contactPara = document.createElement('p');
+                    contactPara.textContent = 'Контактная информация: ' + response.data.contact;
+                    
+                    vacancyContainer.appendChild(titleHeading);
+                    vacancyContainer.appendChild(descriptionPara);
+                    vacancyContainer.appendChild(imageElement);
+                    vacancyContainer.appendChild(contactPara);
+                    
+                    var vacanciesList = document.getElementById('vacancies-list');
+                    vacanciesList.appendChild(vacancyContainer);
+                    
+                    // Перенаправление на страницу index0.1.html
+                    window.location.href = 'index0.1.html';
+                })
+                .catch(function (error) {
+                    // Обработка ошибки
+                    console.log(error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>Список вакансий</h1>
+    <div id="vacancies-list">
+        <!-- Здесь будут отображаться вакансии из базы данных -->
+    </div>
+
+    <!-- Форма добавления новой вакансии -->
+    <h2>Добавить вакансию</h2>
+    <form>
+        <label for="title">Название:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" required></textarea>
+        
+        <label for="image">Изображение:</label>
+        <input type="file" id="image" name="image" accept="image/jpeg" required>
+        
+        <label for="contact">Контактная информация:</label>
+        <input type="text" id="contact" name="contact" required>
+        
+        <a type="button" href="index0.1.html">Добавить</a>
+    </form>
+</body>
+</html>
